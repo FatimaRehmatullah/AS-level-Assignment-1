@@ -1,0 +1,28 @@
+ Dim memberID As Integer
+        Dim membername As String
+        Dim morerecords As Boolean
+
+        memberID = 0
+        membername = "'
+        morerecords = True
+
+        FileOpen(1, "d:\Practices\record.txt", OpenMode.Append)
+
+        While morerecords = True 
+
+            Console.Write("Enter member ID ")
+            memberID = Console.ReadLine
+            Console.Write("Enter member Name ")
+            membername = Console.ReadLine
+            Console.writeline()
+
+            Writeline (1, memberID)
+            Writeline (1, membername)   
+ 
+            Console.Write ("Any more records to be added?")
+            morerecords = Console.readline   
+            Console.Writeline()           
+
+     End While
+
+    FileClose (1)
