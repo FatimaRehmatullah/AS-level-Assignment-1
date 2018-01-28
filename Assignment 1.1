@@ -1,0 +1,24 @@
+Dim moredata As Boolean
+        memberID = 0
+        membername = ""
+        moredata = True
+
+        FileOpen(1, "d:\Practices\srec.txt", OpenMode.Output)
+
+        While moredata = True
+            Console.WriteLine("Enter Member ID")
+            memberID = Console.ReadLine
+            Console.WriteLine("Enter Member Name")
+            membername = Console.ReadLine
+            Console.WriteLine()
+
+            WriteLine(1, memberID)
+            WriteLine(1, membername)
+
+            Console.WriteLine("Any more records to be added")
+            moredata = Console.ReadLine
+            Console.writeline()
+
+        End While
+
+        FileClose(1)
