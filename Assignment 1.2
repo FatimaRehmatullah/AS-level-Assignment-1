@@ -1,0 +1,19 @@
+  Dim memberID As Integer
+        Dim membername As String
+        
+        memberID = 0
+        membername = ""
+
+        FileOpen(1, "d:\Practices\srec.txt", OpenMode.Input)
+
+        While NOT EOF (1)
+            Input (1, memberID)
+            Input (1, membername)
+
+            Console.WriteLine("Member ID: " & memberID)
+            Console.WriteLine("Member Name: " & membername)
+
+        End While
+
+        FileClose(1)
+        Console.Readkey
