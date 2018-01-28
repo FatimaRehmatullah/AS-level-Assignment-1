@@ -1,0 +1,47 @@
+ Dim memberID As Integer
+        Dim membername As String
+        Dim isfound As Boolean
+        Dim searchname As String
+        Dim morerecords As Boolean
+
+        memberID = 0
+        membername = ""
+        searchname = ""
+        morerecords = True
+
+        While morerecords = True
+
+            isfound = False
+
+            Console.Write("Enter member name to search for ")
+            searchname = Console.ReadLine
+
+            FileOpen(1, "d:\Practices\record.txt", OpenMode.Input)
+
+            While Not EOF(1) And isfound = False
+                Input(1, memberID)
+                Input(1, membername)
+
+                If UCase(membername) = UCase(searchname) Then
+                    isfound = True
+
+                    Console.WriteLine("Member ID for this member is: " & memberID)
+                    Console.WriteLine()
+
+                    Console.Write("Any more records to search for?")
+                    morerecords = Console.ReadLine
+
+                End If
+            End While
+
+            FileClose(1)
+
+            If isfound = False Then
+                Console.WriteLine("Record not Found")
+                Console.WriteLine()
+                Console.Write("Any more records to search for?")
+                morerecords = Console.ReadLine
+            End If
+
+
+        End While
